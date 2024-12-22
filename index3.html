@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mouse events</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div>
+      <h1>Doctor Appointment Form</h1>
+
+      <br>
+      <label value="">Name:</label>
+      <input type="text" name="n" id="n">
+      <br><br>
+      <label>Modes of Checkup:</label>
+      <select name="m" id="m">
+        <option value="clinic">Clinic</option>
+        <option value="home">Home</option>
+      </select>
+      <br><br>
+      <label>Time of Checkup:
+        <select name="t" id="t">
+          <option value="6">6pm clinic time</option>
+          <option value="7">7pm clinic time</option>
+          <option value="8">8pm clinic time</option>
+          <option value="9">9pm no clinic time</option>
+          <option value="10">10pm no clinic time</option>
+        </select>
+      </label><br><br>
+      <button class="button" onclick="abc()">Appointment</button><br><br>
+      <h2 id="res"></h2>
+
+    </div>
+    <div>
+      <br><br>
+      <!-- to display result in it -->
+      <img src="./image.png" alt="pic">
+    </div>
+  </div>
+  <!-- js -->
+  <script>
+    function abc() {
+      n = document.getElementById("n").value;
+      a = document.getElementById("m").value;
+      b = document.getElementById("t").value;
+
+      if (a == "clinic") {
+        if (b == "9" || b == "10") {
+          document.getElementById("res").innerHTML = n + " Your Appointment book!<br> And Your Fee is Rs.2000/-";
+        } else {
+          document.getElementById("res").innerHTML = n + " Your Appointment book!<br> And Your Fee is Rs.1000/-";
+        }
+
+      }
+      //if home is selected than
+      else if (a == "home") {
+        if (b == "9" || b == "10") {
+          document.getElementById("res").innerHTML = n + " Your Appointment book!<br> And Your Fee is Rs.4000/-";
+        } else {
+          document.getElementById("res").innerHTML = n + " Your Appointment book!<br> And Your Fee is Rs.2000/-";
+        }
+
+      }
+
+    }
+  </script>
+
+</body>
+
+</html>
